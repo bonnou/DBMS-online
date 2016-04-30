@@ -52,3 +52,10 @@ eclipse {
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.12'
 }
+
+// for heroku
+apply plugin: 'application'
+mainClassName = "net.in.ahr.dbmsOnline.sample01"
+applicationName = "DBHR-online"
+task stage (dependsOn : ['clean', 'installApp'])
+stage.finalizedBy build
