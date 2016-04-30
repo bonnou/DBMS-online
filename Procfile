@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -jar target/DBMS-online-1.0-SNAPSHOT.jar
