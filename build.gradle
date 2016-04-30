@@ -56,6 +56,6 @@ task wrapper(type: Wrapper) {
 // for heroku
 apply plugin: 'application'
 mainClassName = "net.in.ahr.dbmsOnline.sample01"
-applicationName = "DBHR-online"
+applicationName = "DBMS-online"
 task stage (dependsOn : ['clean', 'installApp'])
 stage.finalizedBy build
