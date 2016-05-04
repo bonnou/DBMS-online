@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 public class HelloApplication {
 
-	@RequestMapping("/")
+	@RequestMapping("/hello")
 	String home() {
 		return "Hello World! heroku";
 	}
