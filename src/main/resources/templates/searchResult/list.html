@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8" />
+        <title>検索結果リスト</title>
+    </head>
+    <style>
+        table, tr, th, td{
+            border: #000 1px solid;
+        }
+    </style>
+    <body>
+        <h1>DB*MS-online</h1>
+        <div id="searchCond">
+            <h2>検索条件</h2>
+            <form th:action="@{/searchResult}" th:object="${musicResultDBHRDto}" method="POST">
+                <li>プレイヤー名：<input type="text" name="userName" th:field="*{userName}" /></li>
+                <li>曲名（部分一致）：<input type="text" name="name" th:field="*{name}" /></li>
+                <li>難易度：
+                    <select name="nha" th:field="*{nha}">
+                        <option value=""></option>
+                        <option value="NORMAL">NORMAL</option>
+                        <option value="HYPER">HYPER</option>
+                        <option value="ANOTHER">ANOTHER</option>
+                    </select>
+                </li>
+                <li><input type="submit" value="SEARCH" /></li>
+            </form>
+        </div>
+        <div id="searchResult">
+            <h2>検索結果</h2>
+            <table>
+                <tr>
+                    <th>id_value</th>
+                    <th>userName_value</th>
+                    <th>name_value</th>
+                    <th>nha_value</th>
+                    <th>clearLamp_value</th>
+                    <th>exScore_value</th>
+                    <th>bp_value</th>
+                    <th>scoreRank_value</th>
+                    <th>scoreRate_value</th>
+                    <th>missRate_value</th>
+                    <th>tag_value</th>
+                    <th>fav_value</th>
+                    <th>clearLamp_DBR_value</th>
+                    <th>clearLamp_DBRR_value</th>
+                    <th>clearLamp_DBM_value</th>
+                    <th>clearLamp_DBSR_value</th>
+                    <th>clearLamp_DBM_NONAS_value</th>
+                    <th>clearLamp_RH_value</th>
+                    <th>clearLamp_LH_value</th>
+                    <th>myDifficult_value</th>
+                    <th>djPoint_value</th>
+                    <th>clearProgressRate_value</th>
+                    <th>lastPlayDate_value</th>
+                    <th>lastUpdateDate_value</th>
+                    <th>remainingGaugeOrDeadNotes_value</th>
+                    <th>memoOther_value</th>
+                    <th>pGreat_value</th>
+                    <th>great_value</th>
+                    <th>good_value</th>
+                    <th>bad_value</th>
+                    <th>poor_value</th>
+                    <th>comboBreak_value</th>
+                    <th>insDate_value</th>
+                    <th>updDate_value</th>
+                </tr>
+                <tr th:each="searchResult: ${searchResultList}">
+                    <td th:text="${searchResult.id}">id_value</td>
+                    <td th:text="${searchResult.userName}">userName_value</td>
+                    <td th:text="${searchResult.name}">name_value</td>
+                    <td th:text="${searchResult.nha}">nha_value</td>
+                    <td th:text="${searchResult.clearLamp}">clearLamp_value</td>
+                    <td th:text="${searchResult.exScore}">exScore_value</td>
+                    <td th:text="${searchResult.bp}">bp_value</td>
+                    <td th:text="${searchResult.scoreRank}">scoreRank_value</td>
+                    <td th:text="${searchResult.scoreRate}">scoreRate_value</td>
+                    <td th:text="${searchResult.missRate}">missRate_value</td>
+                    <td th:text="${searchResult.tag}">tag_value</td>
+                    <td th:text="${searchResult.fav}">fav_value</td>
+                    <td th:text="${searchResult.clearLamp_DBR}">clearLamp_DBR_value</td>
+                    <td th:text="${searchResult.clearLamp_DBRR}">clearLamp_DBRR_value</td>
+                    <td th:text="${searchResult.clearLamp_DBM}">clearLamp_DBM_value</td>
+                    <td th:text="${searchResult.clearLamp_DBSR}">clearLamp_DBSR_value</td>
+                    <td th:text="${searchResult.clearLamp_DBM_NONAS}">clearLamp_DBM_NONAS_value</td>
+                    <td th:text="${searchResult.clearLamp_RH}">clearLamp_RH_value</td>
+                    <td th:text="${searchResult.clearLamp_LH}">clearLamp_LH_value</td>
+                    <td th:text="${searchResult.myDifficult}">myDifficult_value</td>
+                    <td th:text="${searchResult.djPoint}">djPoint_value</td>
+                    <td th:text="${searchResult.clearProgressRate}">clearProgressRate_value</td>
+                    <td th:text="${searchResult.lastPlayDate}">lastPlayDate_value</td>
+                    <td th:text="${searchResult.lastUpdateDate}">lastUpdateDate_value</td>
+                    <td th:text="${searchResult.remainingGaugeOrDeadNotes}">remainingGaugeOrDeadNotes_value</td>
+                    <td th:text="${searchResult.memoOther}">memoOther_value</td>
+                    <td th:text="${searchResult.pGreat}">pGreat_value</td>
+                    <td th:text="${searchResult.great}">great_value</td>
+                    <td th:text="${searchResult.good}">good_value</td>
+                    <td th:text="${searchResult.bad}">bad_value</td>
+                    <td th:text="${searchResult.poor}">poor_value</td>
+                    <td th:text="${searchResult.comboBreak}">comboBreak_value</td>
+                    <td th:text="${searchResult.insDate}">insDate_value</td>
+                    <td th:text="${searchResult.updDate}">updDate_value</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

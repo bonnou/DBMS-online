@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driverClassName: org.postgresql.Driver
+    testOnBorrow: true
+    validationQuery: SELECT 1
+
+doma:
+  naming: SNAKE_LOWER_CASE
+  dialect: postgres

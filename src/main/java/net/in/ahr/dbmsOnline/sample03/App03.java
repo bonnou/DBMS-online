@@ -23,13 +23,13 @@ public class App03 implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-
+/*
         String sql = "SELECT 1";
         SqlParameterSource param = new MapSqlParameterSource();
         Integer result = jdbcTemplate.queryForObject(sql, param, Integer.class);
 
         System.out.println("result = " + result);
-
+*/
 /*
         // データ追加
         customerService.save(new Customer(1, "Nobita", "Nobi"));
