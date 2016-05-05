@@ -41,7 +41,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-devtools')
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('org.projectlombok:lombok:1.16.6')
-	compile('org.springframework.boot:spring-boot-starter-social-twitter')
+//	compile('org.springframework.boot:spring-boot-starter-social-twitter')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter')
@@ -52,6 +52,10 @@ dependencies {
 	// for doma-spring-boot-starter
 	compile('org.seasar.doma.boot:doma-spring-boot-starter:1.0.2')
 //	compile('org.flywaydb:flyway-core:3.0')
+
+    // for twitter oauth
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.security.oauth:spring-security-oauth2')
 }
 
 /*

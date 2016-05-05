@@ -1,7 +1,7 @@
 package net.in.ahr.dbms.data.network.request.dto;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.6.2" }, date = "2016-05-04T15:45:10.782+0900")
+@javax.annotation.Generated(value = { "Doma", "2.6.2" }, date = "2016-05-04T21:22:48.097+0900")
 public final class _MusicResultDBHRDto extends org.seasar.doma.jdbc.entity.AbstractEntityType<net.in.ahr.dbms.data.network.request.dto.MusicResultDBHRDto> {
 
     static {

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SSO Sample</title>
+    <script src="//code.jquery.com/jquery-2.2.0.js"></script>
+    <script>
+        $.get('/api/hello').done(function(data){
+            $("#message").html(data.message);
+        }).fail(function(data){
+            $("#message").html(data.responseJSON.message);
+        });
+    </script>
+    <script th:if="${isOAuthFlg}" th:inline="text">
+        window.onload = function(){
+            //標準ブラウザ用URLスキーム
+            location.href="dbmsapp://MusicListActivity/oauthCallback?[[${sessionIdCookieParam}]]".replace("amp;", "");
+//            location.href="intent://MusicListActivity#Intent;scheme=dbmsapp;"
+        }
+    </script>
+</head>
+<body>
+<p>SSO Sample <a href="/login">ログイン</a></p>
+<form id="logoutForm" action="/logout" method="POST">
+    <input type="submit" value="ログアウト" />
+</form>
+■message: <p id="message"></p>
+</body>
+</html>
