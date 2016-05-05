@@ -15,7 +15,7 @@
             <h2>検索条件</h2>
             <form th:action="@{/searchResult}" th:object="${musicResultDBHRDto}" method="POST">
                 <li>プレイヤー名：<input type="text" name="userName" th:field="*{userName}" /></li>
-                <li>曲名（部分一致）：<input type="text" name="name" th:field="*{name}" /></li>
+                <li>曲名（完全一致）：<input type="text" name="name" th:field="*{name}" /></li>
                 <li>難易度：
                     <select name="nha" th:field="*{nha}">
                         <option value=""></option>

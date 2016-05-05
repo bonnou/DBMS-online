@@ -119,18 +119,6 @@ public class ReceiveJsonAndInsert {
 	@RequestMapping("/hello")
 	public Map<String, String> getMessage(HttpServletRequest request) {
 
-// セッションIDのCookieを取得
-String sessionIdCookieName = "";
-String sessionIdCookieValue = "";
-Cookie[] cookies = request.getCookies();
-for (Cookie cookie : cookies) {
-	System.out.println("cookieName:[" + cookie.getName() + "],cookieValue:[" + cookie.getValue() + "]");
-	if ( "JSESSIONID".equals(cookie.getName()) ) {
-		sessionIdCookieName = cookie.getName();
-		sessionIdCookieValue = cookie.getValue();
-	}
-}
-
 		if (request.isUserInRole("ROLE_USER")) {
 			Map<String, String> response = new HashMap<>();
 			response.put("message", "Hello, " + request.getRemoteUser() + "!!!");
