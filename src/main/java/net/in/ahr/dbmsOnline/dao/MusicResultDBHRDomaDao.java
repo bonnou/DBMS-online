@@ -22,6 +22,9 @@ public interface MusicResultDBHRDomaDao {
     @Select
     List<MusicResultDBHRDto> selectByPk(MusicResultDBHRDto result);
 
+    @Select
+    List<MusicResultDBHRDto> getRankingByNameNha(MusicResultDBHRDto result);
+
     @Insert
     int insert(MusicResultDBHRDto musicResultDBHRDto);
 

@@ -117,6 +117,18 @@ public class ReceiveJsonAndInsert {
 	}
 
 
+	@RequestMapping(value = "/getRankingByNameNha", method = RequestMethod.POST)
+	List<MusicResultDBHRDto> getRankingByNameNha(@RequestBody String json) {
+
+		// デシリアライズ
+		Gson gson = new Gson();
+		MusicResultDBHRDto searchCond = gson.fromJson(json, MusicResultDBHRDto.class);
+
+		// 返却値
+		return musicResultDBHRDomaDao.getRankingByNameNha(searchCond);
+	}
+
+
 	@RequestMapping("/hello")
 	public Map<String, String> getMessage(HttpServletRequest request) {
 
