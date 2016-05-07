@@ -57,7 +57,6 @@ public class ReceiveJsonAndInsert {
         Gson gson = new Gson();
         MusicResultDBHRDto musicResult = gson.fromJson(json, MusicResultDBHRDto.class);
 
-
 		// 1件登録
 		int affectRowCnt = 0;
         if (musicResult != null) {
